@@ -1,7 +1,8 @@
 {
   "scripts": {
+    "generate": "bun ./generate-pdf.ts",
     "dev:mkm": "browser-sync start --server --no-inject-changes --files './' --startPath '/sets/mkm.html'",
-    "dev:lotr": "browser-sync start --server --no-inject-changes --files './' --startPath '/sets/lotr.html'",
+    "dev:ltr": "browser-sync start --server --no-inject-changes --files './' --startPath '/sets/ltr.html'",
     "dev:vow": "browser-sync start --server --no-inject-changes --files './' --startPath '/sets/vow.html'",
     "dev:otj": "browser-sync start --server --no-inject-changes --files './' --startPath '/sets/otj.html'",
     "dev:mh3": "browser-sync start --server --no-inject-changes --files './' --startPath '/sets/mh3.html'",
@@ -11,6 +12,10 @@
     "dev:dsk": "browser-sync start --server --no-inject-changes --files './' --startPath '/sets/dsk.html'"
   },
   "devDependencies": {
+    "@types/bun": "^1.1.10",
     "browser-sync": "^3.0.2"
+  },
+  "dependencies": {
+    "playwright": "^1.47.2"
   }
 }
