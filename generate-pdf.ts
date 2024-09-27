@@ -24,7 +24,7 @@ async function generate() {
 		await page.waitForLoadState("domcontentloaded")
 		await page.waitForLoadState("networkidle")
 
-		const title = (await page.title()).replaceAll(":", " ").replaceAll(" ", "-")
+		const title = (await page.title()).replaceAll(":", "").replaceAll(" ", "-").replaceAll("[", "").replaceAll("]", "")
 
 		await page.pdf({
 			path: `./storage/${title}.pdf`,
