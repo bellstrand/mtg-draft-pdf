@@ -6,17 +6,21 @@ const dir = import.meta.dirname;
 async function generate() {
 	const browser = await chromium.launch({ headless: true, args: ["--disable-web-security"] })
 	const page = await browser.newPage({ bypassCSP: true })
-	page.addInitScript((dir) => {
-	  window.addEventListener('DOMContentLoaded', () => {
-		const html = document.querySelector("html") as HTMLHtmlElement
-		html.innerHTML = html?.innerHTML.replace("/style.css", `file:///${dir}/style.css`).replaceAll("/images/", `file:///${dir}/images/`)
-	  });
-	}, dir);
+	await page.route("file:///style.css", async (r) => {
+		const cssFile = Bun.file(`./style.css`)
+		const cssText = await cssFile.text()
+		r.fulfill({ status: 200, contentType: "text/css;charset=utf-8", body: cssText.replaceAll("/images/", `file:///${dir}/images/`) })
+	});
+	await page.route(/html$/, async (r, req) => {
+		const htmlFile = Bun.file(req.url().replace(`file://${dir}/`, "./"))
+		const htmlText = await htmlFile.text()
+		r.fulfill({ status: 200, contentType: "text/html;charset=utf-8", body: htmlText.replaceAll("/images/", `file:///${dir}/images/`) })
+	})
 
 	const files = (await readdir("./sets")).filter((f) => f !== "template.html")
 
-	for(const file of files) {
-		page.goto(`file:///${dir}/sets/${file}`)
+	for (const file of files) {
+		page.goto(`file://${dir}/sets/${file}`)
 		await page.waitForLoadState()
 		// console.info("waitForLoadState")
 		await page.waitForSelector("page")
@@ -28,7 +32,7 @@ async function generate() {
 
 		await page.pdf({
 			path: `./storage/${title}.pdf`,
-			printBackground: false,
+			printBackground: true,
 			scale: 1,
 			width: "21cm",
 			height: "29.7cm"

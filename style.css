@@ -19,9 +19,12 @@ page[size="A4"] {
 	width: 21cm;
 	height: 29.7cm;
 	/*padding: 2cm 1cm 2cm 1cm;*/
-	padding: 1cm 1cm 0.8cm 1cm;
+	padding: 1cm 1cm 0cm 1cm;
 }
 @media print {
+	body {
+		background: white;
+	}
 	body,
 	page {
 		margin: 0;
@@ -81,7 +84,9 @@ h1 {
 	margin: 0;
 }
 h2 {
+	display: flex;
 	font-size: 15px;
+	line-height: 20px;
 	text-wrap: nowrap;
 	margin: 0;
 	margin-bottom: 2px;
@@ -121,3 +126,33 @@ p {
 	display: block;
 	font-size: 10px;
 }
+
+i {
+	display: inline-block;
+	height: 20px;
+	width: 20px;
+}
+i.b { background: url(/images/common/colors/b.svg) }
+i.bg { background: url(/images/common/colors/bg.svg) }
+i.bp { background: url(/images/common/colors/bp.svg) }
+i.br { background: url(/images/common/colors/br.svg) }
+
+i.g { background: url(/images/common/colors/g.svg) }
+i.gu { background: url(/images/common/colors/gu.svg) }
+i.gp { background: url(/images/common/colors/gp.svg) }
+i.gw { background: url(/images/common/colors/gw.svg) }
+
+i.r { background: url(/images/common/colors/r.svg) }
+i.rg { background: url(/images/common/colors/rg.svg) }
+i.rp { background: url(/images/common/colors/rp.svg) }
+i.rw { background: url(/images/common/colors/rw.svg) }
+
+i.u { background: url(/images/common/colors/u.svg) }
+i.ub { background: url(/images/common/colors/ub.svg) }
+i.up { background: url(/images/common/colors/up.svg) }
+i.ur { background: url(/images/common/colors/ur.svg) }
+
+i.w { background: url(/images/common/colors/w.svg) }
+i.wb { background: url(/images/common/colors/wb.svg) }
+i.wp { background: url(/images/common/colors/wp.svg) }
+i.wu { background: url(/images/common/colors/wu.svg) }
