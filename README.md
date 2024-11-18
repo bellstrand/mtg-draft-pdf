@@ -1,6 +1,7 @@
 # MTG Draft PDF's
 
 ## Download links
+[Foundations](https://github.com/bellstrand/mtg-draft-pdf/releases/latest/download/Foundations-Draft.pdf)<br />
 [Duskmourn: House of Horrors](https://github.com/bellstrand/mtg-draft-pdf/releases/latest/download/Duskmourn-House-of-Horrors-Draft.pdf)<br />
 [Bloomburrow](https://github.com/bellstrand/mtg-draft-pdf/releases/latest/download/Bloomburrow-Draft.pdf)<br />
 [Modern Horizon 3](https://github.com/bellstrand/mtg-draft-pdf/releases/latest/download/Modern-Horizon-3-Draft.pdf)<br />
