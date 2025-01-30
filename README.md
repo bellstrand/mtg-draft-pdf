@@ -1,6 +1,7 @@
 # MTG Draft PDF's
 
 ## Download links
+[Innistrad: Remastered](https://github.com/bellstrand/mtg-draft-pdf/releases/latest/download/Innistrad-Remastered-Draft.pdf)<br />
 [Foundations](https://github.com/bellstrand/mtg-draft-pdf/releases/latest/download/Foundations-Draft.pdf)<br />
 [Duskmourn: House of Horrors](https://github.com/bellstrand/mtg-draft-pdf/releases/latest/download/Duskmourn-House-of-Horrors-Draft.pdf)<br />
 [Bloomburrow](https://github.com/bellstrand/mtg-draft-pdf/releases/latest/download/Bloomburrow-Draft.pdf)<br />
